@@ -2,9 +2,15 @@ package models;
 
 import java.util.Date;
 
+/**
+ * Класс реализующий заметку.
+ */
 public class Note {
+    // Название заметки
     private String title;
+    // Текст заметки
     private String text;
+    // Дата последнего редактирования заметки
     private Date dateOfLastEdit;
 
     public Note(String title, String text) {

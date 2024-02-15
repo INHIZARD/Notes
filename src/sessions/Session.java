@@ -1,7 +1,13 @@
+package sessions;
+
 import controllers.NotesController;
 
 import java.io.IOException;
 
+/**
+ * В классе реализована логика вводимых команд.
+ * Также класс взаимодействует с {@code NotesController}.
+ */
 public class Session {
     private final NotesController notesController;
 
@@ -9,6 +15,16 @@ public class Session {
         this.notesController = new NotesController();
     }
 
+    /**
+     * Пользователь имеет возможность ввести любую команду, но отдача предусмотрена только на некоторые команды:
+     * <p>
+     *     1 - добавить заметку
+     *     <br> 2 - посмотреть все заметки
+     *     <br> 3 - редактировать заметку
+     *     <br> 4 - удалить заметку
+     *     <br> 5 - выйти из приложения
+     * </p>
+     */
     public void start() throws IOException {
         String command = notesController.menu();
         boolean closeApp = false;
